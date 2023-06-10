@@ -1,14 +1,14 @@
 import dynamic from "next/dynamic";
-import Carousel from "../components/Carousel";
+import MyCarousel from "../components/MyCarousel";
 
-const DynamicCarousel = dynamic(() => import("../components/Carousel"), { ssr: false });
+const DynamicCarousel = dynamic(() => import("../components/MyCarousel"), { ssr: false });
 // const DynamicDatepicker = dynamic(() => import("../components/datePicker"), { ssr: false });
 
 const Home = () => {
   return (
     <div>
 
-      <Carousel />
+      <MyCarousel />
 
     </div>
   );
