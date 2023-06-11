@@ -8,6 +8,4 @@ Feel free to contribute or use this repo however you want 😁
 
 ## Components that don't work with Next.js:
 
-`tw-elements` : Carousel
-
-
+`tw-elements`: I was able to get the DatePicker to work, but after hours of troubleshooting I still couldn't get the Carousel to work.
