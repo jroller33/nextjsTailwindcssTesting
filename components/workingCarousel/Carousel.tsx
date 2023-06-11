@@ -1,7 +1,8 @@
 import useEmblaCarousel, { EmblaOptionsType } from "embla-carousel-react";
+import React from "react";
 import { PropsWithChildren, useEffect, useState } from "react";
 import Dots from "./Dots";
-import React from "react";
+import CarouselControls from "./CarouselControls";
 
 type Props = PropsWithChildren & EmblaOptionsType;
 
@@ -31,15 +32,22 @@ const Carousel = ({ children, ...options }: Props) => {
 
 
   const length = React.Children.count(children);
-
+  const canScrollPrev = !!emblaApi?.canScrollPrev();
+  const canScrollNext = !!emblaApi?.canScrollNext();
 
   return (
-    <div>
+    <>
     <div className="overflow-hidden" ref={emblaRef}>
       <div className="flex">{children}</div>
     </div>
     <Dots itemsLength={length} selectedIndex={selectedIndex} />
-  </div>
+    <CarouselControls
+      canScrollNext={canScrollNext}
+      canScrollPrev={canScrollPrev}
+      onNext={() => emblaApi?.scrollNext()}
+      onPrev={() => emblaApi?.scrollPrev()}
+    />
+  </>
   );
 };
 

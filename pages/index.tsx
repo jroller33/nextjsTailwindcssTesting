@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import Carousel from "../components/Carousel";
+import Carousel from "../components/workingCarousel/Carousel";
 import Image from "next/image";
 
 const Home: NextPage = () => {
