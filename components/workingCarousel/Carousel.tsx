@@ -14,16 +14,15 @@ const Carousel = ({ children, ...options }: Props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
 
-
   useEffect(() => {
     function selectHandler() {
-      // selectedScrollSnap gives us the current selected index.
+      // selectedScrollSnap gives us the current selected index
       const index = emblaApi?.selectedScrollSnap();
       setSelectedIndex(index || 0);
     }
 
-
     emblaApi?.on("select", selectHandler);
+
     // cleanup
     return () => {
       emblaApi?.off("select", selectHandler);
